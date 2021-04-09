@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+ul li img{
+    width: 800px;
+    height: 600px;
+    margin-left:370px;
+}
+/* 设置图片的容器 */
+.img-list{
+    margin-top: 60px;
+    /* 为ul开启相对定位，目的是使ul中的pointer可以相对于ul定位而不是相对于初始包含块(html)去定位) */
+    position: relative;
+}
+/* 设置li */
+.img-list li{
+    position: absolute;
+}
+/* 通过修改元素的层级来显示指定的图片 */
+.img-list li:nth-child(3){
+    z-index: 1;
+}
+/* 设置导航点样式 */
+.pointer{
+    position: absolute;
+    z-index: 9999;
+    bottom: 80px;
+    left: 410px;
+}
+.pointer a{
+    float: left;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-left: 3px;
+    background-color: rgba(255, 255, 255, .3);
+    /* 将背景颜色只设置到内容区，边框和内边距不再有背景颜色 */
+    background-clip: content-box;
+    border: 2px solid transparent;
+}
+.pointer a.active,
+.pointer a:hover{ 
+    background-color: white;
+    border: 2px solid rgba(255, 0, 0, .3);
+}
